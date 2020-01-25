@@ -24,19 +24,18 @@ class Triangle
   end
  
   def valid?
-#    valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
-    
     if (@@sides.none? {|length| length <= 0}) && ((side_1 + side_2 > side_3) && (side_1 + side_3 > side_2) && (side_2 + side_3 > side_1))
       return true
     else 
       return false
     end
-      
+    
+#    valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]      
 #    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
   end
+  
+  class TriangleError < StandardError
+
+  end
+
 end 
-
-
-class TriangleError < StandardError
-
-end
