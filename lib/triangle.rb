@@ -27,7 +27,7 @@ class Triangle
     
 #    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
     @sides.each do |length|
-      if (length <= 0) && valid_triangle
+      if (length <= 0) || valid_triangle
         return false
       end
     end
