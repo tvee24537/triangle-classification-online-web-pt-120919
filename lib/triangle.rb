@@ -24,6 +24,7 @@ class Triangle
  
   def valid?
     valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
+  end  
     
 #    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
   def negative?
