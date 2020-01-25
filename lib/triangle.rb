@@ -11,7 +11,7 @@ class Triangle
   end
   
   def kind
-    if valid? == false
+    if (negative? == true || valid? == false)
       raise TriangleError 
     elsif side_1 == side_2 && side_2 == side_3
       return :equilateral
