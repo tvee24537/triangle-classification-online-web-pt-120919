@@ -23,7 +23,8 @@ class Triangle
   def valid?
     valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
     
-    if [side_1, side_2, side_3].each {|length| valid_triangle}
+    [side_1, side_2, side_3].each { |length| real_triangle << false if s <= 0 }
+    raise TriangleError if real_triangle.include?(false)
   end
 end 
 
