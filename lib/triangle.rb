@@ -13,7 +13,7 @@ class Triangle
   def kind
     if (negative? == true || valid? == false)
       raise TriangleError 
-    elsif side_1 == side_2 && side_2 == side_3
+    elsif (@side_1 == @side_2) && (@side_1 == @side_3)
       return :equilateral
     elsif side_1 == side_2 || side_2 == side_3 || side_1 == side_3
       return :isosceles
