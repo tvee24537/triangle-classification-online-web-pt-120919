@@ -21,12 +21,7 @@ class Triangle
   end
  
   def valid?
-    sum_one_two = @side_length[0] + @side_length[1]
-    sum_one_three = @side_length[0] + @side_length[2]
-    sum_two_three = @side_length[1] + @side_length[2]
-
-    if (@side_length.none? {|side| side <= 0}) &&
-      (sum_one_two > @side_length[2] && sum_one_three > @side_length[1] && sum_two_three > @side_length[0])
+    
       return true
     else
       return false
