@@ -1,21 +1,19 @@
 class Triangle
   # write code here
   attr_reader :side_1, :side_2, :side_3
-  @sides = []
   
   def initialize(side_1, side_2, side_3)
     @side_1 = side_1
     @side_2 = side_2
     @side_3 = side_3
-    @sides = [side_1, side_2, side_3]
   end
   
   def kind
-    if (negative? == true || valid? == false)
-      raise TriangleError 
-    elsif (side_1 == side_2) && (side_1 == side_3)
+    if valid? == false
+      raise TriangleError
+    if side_1 == side_2 && side_2 == side_3
       return :equilateral
-    elsif (side_2 == side_3) || (side_1 == side_2) || (side_1 = side_3)
+    elsif side_1 == side_2 || side_2 == side_3 || side_1 == side_3
       return :isosceles
     else
       return :scalene
@@ -23,17 +21,11 @@ class Triangle
   end
  
   def valid?
-    (side_1 + side_2 > side_3) && (side_2 + side_3 > side_1) && (side_1 + side_3 > side_2)
-  end  
+    valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
     
-  def negative?
-    @sides.each do |length|
-      if(length <= 0)
-        return true
-      end
-    end
+    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
+    raise TriangleError if valid_triangle.include?(false)
   end
-  
 end 
 
 
