@@ -26,14 +26,14 @@ class Triangle
     valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
     
 #    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
-      def negative?
+  def negative?
     @sides.each do |length|
       if(length <= 0)
         return true
       end
     end
   end
-  end
+  
 end 
 
 
