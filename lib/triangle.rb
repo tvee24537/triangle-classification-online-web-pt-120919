@@ -23,12 +23,12 @@ class Triangle
   end
  
   def valid?
-    valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
+#    valid_triangle = [(side_1 + side_2 > side_3), (side_1 + side_3 > side_2), (side_2 + side_3 > side_1)]
     
-    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
+#    [side_1, side_2, side_3].each { |length| valid_triangle << false if length <= 0 }
     @sides.each do |length|
       if(length <= 0)
-        return true
+        return false
       end
     end
   end
